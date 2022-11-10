@@ -7,19 +7,19 @@ galleryUl.insertAdjacentHTML('beforeend', cardsGallery);
 
 function createGalleryItems(items) {
     return galleryItems
-        .map({ { preview, original, description } }  => {
-    return '
-        < div class="gallery__item" >
-        <a class="gallery__link" href="large-image.jpg">
-            <img
-                class="gallery__image"
-                src="${preview}"
-                data-source="${original}"
-                alt="${description}"
-            />
-        </a>
-    </div > ';
-} )
+        .map(({ preview, original, description }) => {
+        return '       
+            <div class ="gallery__item" >
+                <a class="gallery__link" href="large-image.jpg">
+                    <img
+                        class="gallery__image"
+                        src="${preview}"
+                        data-source="${original}"
+                        alt="${description}"
+                    />
+                </a>  
+         </div >';
+    })
 .join(''); 
 }
 
