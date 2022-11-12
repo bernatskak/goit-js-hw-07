@@ -11,7 +11,7 @@ function createGalleryItems(item) {
     .map(({ preview, original, description }) => {
       return `
             <div class ="gallery__item">
-                <a class="gallery__link" href=${original}>
+                <a class="gallery__link" href="${original}">
                     <img
                         class="gallery__image"
                         src="${preview}"
@@ -28,17 +28,15 @@ function onGalleryUlClick(eve) {
   if (eve.target.nodeName !== "IMG") return;
 }
 
-// console.log(eve.target.dataset.source);
-
-// const imageEl = document.querySelector(".gallery__item");
-// imageEl.src === eve.target.dataset.source;
 const instance = basicLightbox.create(
-  ` <div class="modal">
-         <img
-       src= "${eve.target.dataset.source}"
+  `
+  <div class="modal">
+    <img
+    class="modal__image"
+    src="${eve.target.dataset.source}"
     />
-    </div>
-     `,
+  </div>
+  `,
   {
     onShow: (instance) => {
       window.addEventListener("keydown", onEscPress);
@@ -49,6 +47,7 @@ const instance = basicLightbox.create(
     },
   }
 );
+
 function onEscPress(eve) {
   if (eve.code === "Escape") {
     instance.close();

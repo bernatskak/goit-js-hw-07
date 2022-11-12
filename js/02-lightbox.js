@@ -1,6 +1,6 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
-const galleryEl = document.querySelector("ul.gallery");
+const galleryUl = document.querySelector(".gallery");
 
 function makeGallery(arr) {
   const galleryItemsMarkup = arr
@@ -8,9 +8,9 @@ function makeGallery(arr) {
       return `<li><a class="gallery__item" href="${original}"><img class="gallery__image" src="${preview}" alt="${description}" title="${description}" /></a></li>`;
     })
     .join("");
-  return galleryEl.insertAdjacentHTML("afterbegin", galleryItemsMarkup);
+  return galleryUl.insertAdjacentHTML("afterbegin", galleryItemsMarkup);
 }
 
 makeGallery(galleryItems);
-const gallery = new SimpleLightbox("ul.gallery a");
+const newGallery = new SimpleLightbox(".gallery a");
 console.log(galleryItems);
