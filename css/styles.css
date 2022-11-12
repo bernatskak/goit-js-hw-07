@@ -25,7 +25,9 @@
 .gallery__image:hover {
   transform: scale(1.03);
 }
-
+.gallery__link:hover {
+  cursor: zoom-in;
+}
 .gallery__image {
   height: 100%;
   width: 100%;
@@ -42,6 +44,7 @@
 .gallery__link:hover {
   cursor: zoom-in;
 }
-.modal-image {
-  height: auto;
+.modal__image {
+  max-height: auto;
+  max-width: 70vw;
 }
